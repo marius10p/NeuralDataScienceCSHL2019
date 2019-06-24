@@ -13,24 +13,62 @@ Linux is the main operating system used for scientific computing. Different dist
 4) Advanced topic: shell scripting. This is like writing a script with multiple lines of code for the command line to execute sequentially. If you are submitting jobs to a compute cluster, you will write such scripts to include all the commands you want your job to run (i.e. matlab or python programs). 
 	https://www.tutorialspoint.com/unix/shell_scripting.htm
 
-Cheat sheet of useful commands:
+## Cheat sheet of useful commands:
 
-Man
+**man "command"**: see what the options are for an executable command like "python" or "mv"
 
-sudo apt install
+**sudo __**: this preface allows you to make changes to your root directory, like copy/edit files or install packages
 
-Cd ~/, /
+**sudo apt install**: install packages (autocomplete available with TAB)
 
-Mv
+**ctrl+r**: allows you to search through previous commands you've typed into the command line (can use ctrl+c to cancel)
 
-Rm (-r)
+### Processes
 
-pwd
+**ctrl+c**: kill anything running 
 
-ls -lt string*    #star means anything can follow
+**free -h**: summary of memory usage (RAM)
 
-cat/less file_name
+**top**: shows you all processes running and what resources they're using
 
-vi file_name # open a text file to edit
+**kill PID**: kill processes with ID's you can see in **top**
 
-chmod 777 file_name # make a file executable
+### Look around and move things (you can use **TAB** to try to autocomplete ANYTHING)
+
+**pwd**: states the full path to the directory you're currently in
+
+**cd ~/**: this takes you to your home directory (you have write access here)
+
+**cd /**: this takes you to the root directory (you have read-only access here)
+
+**cd ../**: go to the parent of the current directory you're in (go one folder up)
+
+**cd "folder"**: change to directory to "folder"
+
+**mkdir "folder"**: create directory "folder"
+
+**mv "file" "folder"**: move a "file" to "folder"
+
+**mv "folder1" "folder2"**: move "folder1" to "folder2"
+
+**cp "file" "folder"**: copy a "file" to "folder"
+
+**cp -r "folder1" "folder2"**: copy "folder1" to "folder2"
+
+**rm "file"**: delete file
+
+**rm -r "folder"**: delete folder
+
+**ls -lt string***: lists contents of a directory + time of last edit + whether you have read-write-executable access
+
+**star means anything can follow**
+
+### Look at and edit files
+
+**less "filename"**: quickly look at file without edit ("q" to quit, arrow keys/page up/down to move)
+
+**vi "file_name"**: open a text file to edit (to insert text, type "i"; to save and close, press ESC and type ":wq"
+
+**chmod 777 "file_name"**: makes a file executable
+
+**grep "phrase" \*.txt**: look for "phrase" in all txt files in a directory
