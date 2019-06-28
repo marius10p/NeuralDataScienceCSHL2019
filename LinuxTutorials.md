@@ -14,9 +14,9 @@ Linux is the main operating system used for scientific computing. Different dist
 	https://www.tutorialspoint.com/unix/shell_scripting.htm
 	
 Some links to online Linux emulators that you can use to practice linux commands
-	http://copy.sh/v86/
-	https://www.tutorialspoint.com/unix_terminal_online.php
-	https://bellard.org/jslinux/
+	http://copy.sh/v86/  
+	https://www.tutorialspoint.com/unix_terminal_online.php  
+	https://bellard.org/jslinux/  
 
 ## Cheat sheet of useful commands:
 
