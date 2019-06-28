@@ -13,7 +13,7 @@ Linux is the main operating system used for scientific computing. Different dist
 4) Advanced topic: shell scripting. This is like writing a script with multiple lines of code for the command line to execute sequentially. If you are submitting jobs to a compute cluster, you will write such scripts to include all the commands you want your job to run (i.e. matlab or python programs). 
 	https://www.tutorialspoint.com/unix/shell_scripting.htm
 	
-Some links to online Linux emulators that you can use to practice linux commands
+Some links to online Linux emulators that you can use to practice linux commands  
 	http://copy.sh/v86/  
 	https://www.tutorialspoint.com/unix_terminal_online.php  
 	https://bellard.org/jslinux/  
