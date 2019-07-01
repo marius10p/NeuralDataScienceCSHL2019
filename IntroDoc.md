@@ -44,6 +44,6 @@ Meals are served during the following hours and at these locations:
 
 # Schedule:
 
-#Student Atendees:
-#Instructor and co-instructors:
+# Student Atendees:
+# Instructors and co-instructors:
 
