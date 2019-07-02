@@ -64,7 +64,7 @@ The tutorials below will use jupyter notebooks (and pretty much everyone who use
 
 ### Python tutorials
 
-The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is very good, I'd recommend starting there. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast.
+The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is very good, I'd recommend starting there. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast:
 ~~~
 import numpy as np
 import matplotlib.pyplot as plt
@@ -75,12 +75,24 @@ x = np.random.rand(50,50)
 # broadcasted indices (get a square)
 plt.imshow(x[10:20, 10:20])
 
-# list indices (get *10* numbers not a 10x10)
-plt.imshow(x[np.arange(10,20,1,int), np.arange(10,20,1,int)])
-
+# list of indices (get *10* numbers not a 10x10)!
+print(x[np.arange(10,20,1,int), np.arange(10,20,1,int)])
 ~~~
 
+Numpy also automatically broadcasts if last N indices are the same (it will add the first index itself). However, if you want to broadcast along the last indices, then you need to add new axes:
+~~~
+import numpy as np
 
+x = np.random.rand(50,100)
 
-This UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
+print(x.shape, x.mean(axis=0).shape, x.mean(axis=1).shape)
+
+# x is 50x100 and x.mean(axis=0) is 100 long (LAST AXIS MATCHES)
+x -= x.mean(axis=0)
+
+# x is 50x100 and x.mean(axis=1) is 50 long (LAST AXIS DOES NOT MATCH)
+x -= x.mean(axis=1)[:,np.newaxis]
+~~~
+
+Also, this UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
 
