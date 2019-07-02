@@ -70,7 +70,7 @@ The tutorials below will use jupyter notebooks (and pretty much everyone who use
 
 ### Python tutorials
 
-If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast:
+If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast. Run the following in a cell (CTRL+ENTER to run a cell):
 ~~~
 import numpy as np
 import matplotlib.pyplot as plt
