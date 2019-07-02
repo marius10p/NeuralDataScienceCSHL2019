@@ -64,7 +64,7 @@ The tutorials below will use jupyter notebooks (and pretty much everyone who use
 
 ### Python tutorials
 
-The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is very good, I'd recommend starting there. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast:
+If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast:
 ~~~
 import numpy as np
 import matplotlib.pyplot as plt
@@ -94,5 +94,21 @@ x -= x.mean(axis=0)
 x -= x.mean(axis=1)[:,np.newaxis]
 ~~~
 
-Also, this UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
+Did you see I did a few other tricky things you can't do in matlab? I did an "inline" operation to subtract, the following are equivalent:
+~~~
+x = x - x.mean(axis=0)
+x -= x.mean(axis=0)
+~~~
+
+Also, these numpy vectors/matrices have their OWN functions called methods, which you call with the `.` - this is different from matlab. So you can take the mean as
+~~~
+xmean = x.mean(axis=0)
+xmean = np.mean(x, axis=0) # more matlab-y way
+~~~
+You can see all the methods of an object with
+~~~
+dir(x)
+~~~
+
+This UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
 
