@@ -116,5 +116,7 @@ You can see all the methods of an object with
 dir(x)
 ~~~
 
-For those interested, this UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
+The scikit-learn [tutorials](https://scikit-learn.org/stable/tutorial/basic/tutorial.html#machine-learning-the-problem-setting) are a nice place to start trying out some python for simple machine learning.
+
+And for more info, this UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
 
