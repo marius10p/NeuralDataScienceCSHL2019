@@ -1,12 +1,18 @@
-### Installation and package management
+### Installation
 
-To get started with python, install Anaconda [python](https://www.anaconda.com/distribution/). This will come with many useful libraries for data analysis. Now if you're in Windows, open up an "Anaconda prompt", or if you're in Linux you'll want to make sure that your `~/.bashrc` profile points to Anaconda python, not the built in python (so when you open a terminal you're all set). Add the following lines to your `~/.bashrc` file if it's not there already (where `<user>` is your username):
+To get started with python, install Anaconda [python](https://www.anaconda.com/distribution/). This will come with many useful libraries for data analysis. Now if you're in **Windows**, open up an "Anaconda prompt" and you're good to go.
+
+If you're in **Linux** you'll want to make sure that your `~/.bashrc` profile points to Anaconda python, not the built in python (so when you open a terminal you're all set). Add the following lines to your `~/.bashrc` file if it's not there already (where `<user>` is your username):
 ~~~
 export PATH="/home/<user>/anaconda3/bin:$PATH"
 conda activate
 ~~~
 
-Anaconda has a package manager [**conda**](https://conda.io/en/latest/) that you can use to install packages. Here is a good [tutorial](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html). I will give the minimal information for use. To install a package say
+If you're in **Mac**, here are detailed [instructions](https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x). It should work out of the box in a terminal, but if not you may need to modify your `.bash_profile` like in Linux.
+
+### Packages and environments
+
+Anaconda has a package manager [**conda**](https://conda.io/en/latest/) that you can use to install packages. Here is a good [tutorial](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html) if you want more info. To install a package say
 ~~~
 conda install numpy
 ~~~
