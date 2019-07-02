@@ -1,6 +1,23 @@
-To get started with python, install Anaconda [python](https://www.anaconda.com/distribution/). This will come with many useful libraries for data analysis.
+### Installation and package management
 
-Anaconda allows you to create different **environments** for your code. This is different from matlab. In python, there are many packages with different versions that aren't always backward compatible. Therefore, you may write code that might not work quite the same way in a year or so. However, all python packages have **version** control, so you can specifically install a package with
+To get started with python, install Anaconda [python](https://www.anaconda.com/distribution/). This will come with many useful libraries for data analysis. Now if you're in Windows, open up an "Anaconda prompt", or if you're in Linux you'll want to make sure that your `~/.bashrc` profile points to Anaconda python, not the built in python (so when you open a terminal you're all set). Add the following lines to your `~/.bashrc` file if it's not there already (where `<user>` is your username):
+~~~
+export PATH="/home/<user>/anaconda3/bin:$PATH"
+conda activate
+~~~
+
+Anaconda has a package manager [**conda**](https://conda.io/en/latest/) that you can use to install packages. Here is a good [tutorial](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html). I will give the minimal information for use. To install a package say
+~~~
+conda install numpy
+~~~
+To upgrade to the latest version of a package say
+~~~
+conda install numpy --upgrade
+~~~
+
+Another package manager is `pip`, these are packages that are written only in python (see info [here](https://www.anaconda.com/understanding-conda-and-pip/)). Generally these will be packages that you find on github. I recommend using `conda` when available (e.g. for things like numpy or scikit-learn) because it makes sure that all dependencies are working. Dependencies are packages on which a package depends - most packages in data analysis will depend on the core packages like numpy and scipy.
+
+conda also allows you to create different **environments** for your code. This is different from matlab. In python, there are many packages with different versions that aren't always backward compatible. Therefore, you may write code that might not work quite the same way in a year or so with the latest packages. However, all python packages have **version** control, so you can specifically install an older package with
 ~~~
 pip install suite2p==0.5.5
 ~~~
@@ -15,12 +32,55 @@ conda create -n cshl
 conda activate cshl
 ~~~
 
-Now you're in a new environment, you should see `(cshl)` on the left-hand side of your terminal. You can install packages here as you wish, and your `(base)` anaconda packages won't change. To close the environment, say
+Now you're in a new environment, you should see `(cshl)` on the left-hand side of your terminal. You can install packages here as you wish, and your `(base)` anaconda packages won't change. To see what packages are installed you can say
+~~~
+conda list
+~~~
+
+To close the environment, say
 ~~~
 conda deactivate
 ~~~
 
-In fact many packages that you might install from github come with `environment.yml` files to make an environment with the correct dependencies for you.
+Many packages that you might install from github come with `environment.yml` files to make an environment with the correct dependencies for you. Once in a folder which contains the `environment.yml`, run the following to name the environment `suite2p`:
+~~~
+conda env create -n suite2p
+conda activate suite2p
+~~~
+
+### Jupyter notebooks
+
+The `(base)` Anaconda environment will have `jupyter-notebook` installed. Run this from the folder in which you want to create your notebooks and a browser window should open with the address "localhost:8888/tree":
+~~~
+jupyter-notebook
+~~~
+
+If it isn't installed, then install it with
+~~~
+conda install ipython jupyter
+~~~
+
+The tutorials below will use jupyter notebooks (and pretty much everyone who uses python does) so it's a good idea to be able to open one and plot something simple. Here's an [example](https://www.tutorialspoint.com/jupyter/jupyter_notebook_plotting.htm) of something you should try to do yourself.
+
+### Python tutorials
+
+The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is very good, I'd recommend starting there. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast.
+~~~
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+x = np.random.rand(50,50)
+
+# broadcasted indices (get a square)
+plt.imshow(x[10:20, 10:20])
+
+# list indices (get *10* numbers not a 10x10)
+plt.imshow(x[np.arange(10,20,1,int), np.arange(10,20,1,int)])
+
+~~~
+
+
 
 This UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
 
