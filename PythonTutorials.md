@@ -150,12 +150,12 @@ And for more info, this UCL Engineering [website](http://github-pages.ucl.ac.uk/
 
 ### Summary of resources
 
-- Anaconda [download](https://www.anaconda.com/distribution/) **FIRST STEP**
+- Anaconda [download](https://www.anaconda.com/distribution/) (**FIRST STEP**)
 - conda [tutorial](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)
 - [conda vs pip](https://www.anaconda.com/understanding-conda-and-pip/)
-- [plotting in jupyter](https://www.tutorialspoint.com/jupyter/jupyter_notebook_plotting.htm) **ESSENTIAL**
+- [plotting in jupyter](https://www.tutorialspoint.com/jupyter/jupyter_notebook_plotting.htm) (**ESSENTIAL**)
 - [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) 
-- numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) **ESSENTIAL**
+- numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) (**ESSENTIAL**)
 - scikit-learn [tutorials](https://scikit-learn.org/stable/tutorial/basic/tutorial.html#machine-learning-the-problem-setting)
 - intro to python [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf)
 
