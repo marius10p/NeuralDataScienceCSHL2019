@@ -25,11 +25,26 @@ To get back to master, `git checkout master`. To get the LATEST code, use the **
 git pull
 ~~~
 
+### Edit files (in repo you own)
+
+If you change a file, you can **commit** the changes to that file with
+~~~
+git commit -a -m 'my commit'
+git push
+~~~
+
+The commit message is 'my commit' in this case, it should say what code you've changed. To **add** new files to the repository that you've added only locally, say
+~~~
+git add mytext.txt
+git commit -a -m 'mytext added'
+git push
+~~~
+
 ### Advanced (optional)
 
 This isn't our repository so we can't make a branch, add a feature and push it to the master branch. But we can **fork** the repository and make a branch there, and then if we want to suggest these changes to the master branch we make a **pull request**.
 
-To make a fork, you'll need to click on the **fork** button on the github page and then clone the fork
+To make a fork, you'll need to click on the **fork** button on the github page and then clone the fork. Now you'll have your OWN version of this repository.
 ~~~
 cd ..
 mkdir fork
@@ -46,19 +61,6 @@ git push origin mybranch
 ~~~
 
 Now if you run `git branch -a` you'll see a new branch `mybranch` with a star next to it, signifying that you're on that branch.
-
-If you change a file, you can **commit** the changes to that file with
-~~~
-git commit -a -m 'my commit'
-git push
-~~~
-
-The commit message is 'my commit' in this case, it should say what code you've changed. To **add** new files to the repository that you've added only locally, say
-~~~
-git add mytext.txt
-git commit -a -m 'mytext added'
-git push
-~~~
 
 From the github website, you can make a pull request with this branch and add comments about what it does. I'd recommend doing it this way if you're suggesting changes to someone else's repository.
 
