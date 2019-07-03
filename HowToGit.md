@@ -33,7 +33,7 @@ git clone https://github.com/carsen-stringer/AllenSDK.git
 cd AllenSDK
 ~~~
 
-If this was your own repository, then you could make a branch and push it to github
+Make a branch and push it to github
 ~~~
 git checkout master
 git checkout -b mybranch
@@ -42,7 +42,7 @@ git push origin mybranch
 
 Now if you run `git branch -a` you'll see a new branch `mybranch` with a star next to it, signifying that you're on that branch.
 
-From the github website, you can make a pull request with this branch and add comments about what it does. I'd recommend doing it this way rather than from the command line.
+From the github website, you can make a pull request with this branch and add comments about what it does. I'd recommend doing it this way if you're suggesting changes to someone else's repository.
 
 If this is your own repository then the following will merge the branch into the master branch:
 ~~~
