@@ -70,7 +70,19 @@ The tutorials below will use jupyter notebooks (and pretty much everyone who use
 
 ### Python tutorials
 
-If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Slices are `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast. Run the following in a cell (CTRL+ENTER to run a cell):
+If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. 
+
+The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Array indexing starts at ZERO and you can use negative numbers to go backwards:
+~~~
+import numpy as np
+
+x = np.random.rand(50)
+x = x
+[0:-2]
+# x = x(1:end-2) in matlab
+
+~~~
+Slices are these colon indices `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast. Run the following in a cell (CTRL+ENTER to run a cell):
 ~~~
 import numpy as np
 import matplotlib.pyplot as plt
@@ -83,6 +95,9 @@ plt.imshow(x[10:20, 10:20])
 
 # list of indices (get *10* numbers not a 10x10)!
 print(x[np.arange(10,20,1,int), np.arange(10,20,1,int)])
+
+
+
 ~~~
 
 Numpy also automatically broadcasts if last N indices are the same (it will add the first index itself). However, if you want to broadcast along the last indices, then you need to add new axes:
