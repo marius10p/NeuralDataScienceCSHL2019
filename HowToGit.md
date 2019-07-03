@@ -27,13 +27,15 @@ git pull
 
 ### Edit files (in repo you own)
 
-If you change a file, you can **commit** the changes to that file with
+Note these commands will only work in a repository that you are a contributor/owner. If you change a file, you can **commit** the changes to that file with
 ~~~
 git commit -a -m 'my commit'
 git push
 ~~~
 
-The commit message is 'my commit' in this case, it should say what code you've changed. To **add** new files to the repository that you've added only locally, say
+The commit message is 'my commit', it should say what code you've changed so you know for future reference. 
+
+To **add** new files to the repository that you've added only locally, say
 ~~~
 git add mytext.txt
 git commit -a -m 'mytext added'
