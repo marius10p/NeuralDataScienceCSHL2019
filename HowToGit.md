@@ -49,7 +49,7 @@ git commit -a
 git push
 ~~~
 
-If the repository was changed by another user, the "push" command will fail and prompt you to `git pull` first, then try `git push`. If your changes have conflicts with those of another user, the pull command will inform you of conflicts, and you will have to fix them manually, then commit again.
+If the repository was changed by another user, the `git push` command will fail and prompt you to `git pull` first, then you can try `git push` again. If your changes have conflicts with those of another user, the `git pull` command will inform you of conflicts, which  you will have to fix manually, then commit again.
 
 
 ### Advanced (optional)
