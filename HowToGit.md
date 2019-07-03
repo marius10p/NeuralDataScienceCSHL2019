@@ -5,7 +5,7 @@ Install [git](https://git-scm.com/downloads) on your computer. On Windows/Mac/Li
 mkdir github
 cd github
 ~~~
-Now in the folder of your choice, you can **clone** AKA download a github repository. You append `.git` to the web address. 
+Now in the folder of your choice, you can **clone** (download) a github repository. You append `.git` to the web address. 
 ~~~
 git clone https://github.com/AllenInstitute/AllenSDK.git
 ~~~
