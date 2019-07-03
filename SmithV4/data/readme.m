@@ -155,15 +155,15 @@ u = 3;
 c = 1;
 
 bins = time(1:end-1) + diff(time)/2;
-SPIKES = SPIKE_TRAINS(:,CONDITION==c & UNIT==u);
-SPIKES = SPIKES.*(1:size(SPIKES,2));
-SPIKES(SPIKES==0) = NaN;
+spikes = SPIKE_TRAINS(:,CONDITION==c & UNIT==u);
+spikes = spikes.*(1:size(spikes,2));
+spikes(spikes==0) = NaN;
 
 figure(2); clf; hold on;
-plot(bins,SPIKES,'k.','HandleVisibility','off')
+plot(bins,spikes,'k.','HandleVisibility','off')
 xlabel('time relative to stimulus onset (s)')
 ylabel('repeat');
-ylim([-5,size(SPIKES,2)+6])
+ylim([-5,size(spikes,2)+6])
 
 
 ax = gca;
