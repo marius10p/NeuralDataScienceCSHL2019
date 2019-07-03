@@ -1,6 +1,8 @@
 ### Installation
 
-To get started with python, install Anaconda [python](https://www.anaconda.com/distribution/). This will come with many useful libraries for data analysis. Now if you're in **Windows**, open up an "Anaconda prompt" and you're good to go.
+To get started with python, install Anaconda [python](https://docs.anaconda.com/anaconda/packages/pkg-docs/). This will come with many useful libraries for data analysis. If you want to use TENSORFLOW, you need to install the **Python 3.6** version.
+
+Now if you're in **Windows**, open up an "Anaconda prompt" and you're good to go.
 
 If you're in **Linux** you'll want to make sure that your `~/.bashrc` profile points to Anaconda python, not the built in python (so when you open a terminal you're all set). Add the following lines to your `~/.bashrc` file if it's not there already (where `<user>` is your username):
 ~~~
@@ -9,6 +11,7 @@ conda activate
 ~~~
 
 If you're in **Mac**, here are detailed [instructions](https://www.datacamp.com/community/tutorials/installing-anaconda-mac-os-x). It should work out of the box in a terminal, but if not you may need to modify your `.bash_profile` like in Linux.
+
 
 ### Packages and environments
 
