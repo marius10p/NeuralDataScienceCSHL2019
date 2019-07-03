@@ -21,7 +21,6 @@ Name | Role | Affiliation
 [Stefanos	Stagkourakis](mailto:stefanos.stagkourakis@caltech.edu) | Student | 	Caltech
 [Matthew	Stern](mailto:matthew.a.stern@emory.edu)	 | Student | Emory University School of Medicine
 [Yujiao	Sun	](mailto:jsun@phy.ucsf.edu) | Student | University of California, San Francisco
-[César	Vargas](mailto:cvargas@rockefeller.edu)	 | Student | Rockefeller 
 [Frances	Xia	](mailto:frances.xia@ucsf.edu) | Student | University of California San Francisco
 [Kathryn Bonnen](mailto:ktbonnen@gmail.com) | Co-Instructor | New York University
 [Michael Moore](mailto:michael.moore123@gmail.com)| Co-Instructor | Michigan State University | 
