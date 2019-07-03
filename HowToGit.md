@@ -20,6 +20,11 @@ git checkout 207
 ~~~
 These branches are development code that is separate from the master. Often you make a branch to add a new feature and then merge the feature into the main branch. So you may want to checkout a branch to get the latest features of the code.
 
+To get back to master, `git checkout master`. To get the LATEST code, use the **pull** command:
+~~~
+git pull
+~~~
+
 ### Advanced (optional)
 
 This isn't our repository so we can't make a branch, add a feature and push it to the master branch. But we can **fork** the repository and make a branch there, and then if we want to suggest these changes to the master branch we make a **pull request**.
@@ -33,7 +38,7 @@ git clone https://github.com/carsen-stringer/AllenSDK.git
 cd AllenSDK
 ~~~
 
-Make a branch and push it to github
+Make a branch and **push** it to github (push means put the code on github)
 ~~~
 git checkout master
 git checkout -b mybranch
@@ -41,6 +46,19 @@ git push origin mybranch
 ~~~
 
 Now if you run `git branch -a` you'll see a new branch `mybranch` with a star next to it, signifying that you're on that branch.
+
+If you change a file, you can **commit** the changes to that file with
+~~~
+git commit -a -m 'my commit'
+git push
+~~~
+
+The commit message is 'my commit' in this case, it should say what code you've changed. To **add** new files to the repository that you've added only locally, say
+~~~
+git add mytext.txt
+git commit -a -m 'mytext added'
+git push
+~~~
 
 From the github website, you can make a pull request with this branch and add comments about what it does. I'd recommend doing it this way if you're suggesting changes to someone else's repository.
 
