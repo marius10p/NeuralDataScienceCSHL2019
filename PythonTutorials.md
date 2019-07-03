@@ -68,7 +68,7 @@ conda install ipython jupyter
 
 The tutorials below will use jupyter notebooks (and pretty much everyone who uses python does) so it's a good idea to be able to open one and plot something simple. Here's an [example](https://www.tutorialspoint.com/jupyter/jupyter_notebook_plotting.htm) of something you should try to do yourself.
 
-### Python tutorials
+### Numpy (matrices in python)
 
 If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. 
 
