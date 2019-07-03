@@ -1,4 +1,4 @@
-These are math video resources from youtube. The videos in bold are essential videos. This list is pulled from [here](https://janeliamlcourse.github.io/MathClub/) if you want to see the notes for the videos.
+These are math video resources from youtube. The videos in bold are essential videos. Please watch the linear algebra and regression essential videos before the class, if you have not already studied it. This list is pulled from [here](https://janeliamlcourse.github.io/MathClub/) if you want to see the notes for the videos.
 
 - Calculus (1st semester mostly, for those who need a refresher)
     - [limits](https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-limits-optional/v/limit-intuition-review)
@@ -12,7 +12,7 @@ These are math video resources from youtube. The videos in bold are essential vi
     - [gradients](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient); [gradient graphs](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient-and-graphs); and [contour maps](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient-and-contour-maps)
     - [intro to lagrange multipliers](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/constrained-optimization-introduction); [constrained optimization with lagrange multipliers](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/lagrange-multipliers-using-tangency-to-solve-constrained-optimization); and an [example](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/finishing-the-intro-lagrange-multiplier-example)
 
-- Linear algebra basics
+- Linear algebra
     - [vector intro](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/vector-introduction-linear-algebra)
     - [real coordinate spaces](https://www.khanacademy.org/math/linear-algebra/vectors-and-spaces/vectors/v/real-coordinate-spaces)
     - **[linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=k7RM-ot2NWY)**
@@ -22,8 +22,12 @@ These are math video resources from youtube. The videos in bold are essential vi
     - [inverse matrices, column space and null space](https://www.youtube.com/watch?v=uQhTuRlWMxw)
     - [big picture of linear algebra](https://www.youtube.com/watch?v=ggWYkes-n6E)
     - [change of basis](https://www.youtube.com/watch?v=P2LTAUO1TdA)
-       
-- Eigenvalues and PCA
+     
+- Linear regression
+    - **[linear regression overview](https://www.youtube.com/watch?v=rVviNyIR-fI)**
+    - [least squares + ridge regression](https://ocw.mit.edu/courses/mathematics/18-086-mathematical-methods-for-engineers-ii-spring-2006/video-lectures/lecture-21-optimization-with-constraints/)
+    
+- Advanced: eigenvalues and PCA
     - **[eigenvalues and eigenvectors](https://www.youtube.com/watch?v=PFDu9oVAE-g)**
     - **[matrix diagonalization](https://www.youtube.com/watch?v=U8R54zOTVLw&list=PL9peWTxCcrBJ0ntGY4VMLYnnDJGuXHDAD&index=40)**
     - [linear systems of differential equations](https://www.youtube.com/watch?v=iVlHPDER0FA&list=PL9peWTxCcrBJ0ntGY4VMLYnnDJGuXHDAD&index=42) (only for those interested in diff-eq)
@@ -33,9 +37,7 @@ These are math video resources from youtube. The videos in bold are essential vi
     - **[PCA derivation](https://www.youtube.com/watch?v=L-pQtGm3VS8)** (first part of video)
     - **[SVD derivation](https://www.youtube.com/watch?v=mBcLRGuAFUk)**
 
-- Linear regression
-    - **[linear regression overview](https://www.youtube.com/watch?v=rVviNyIR-fI)**
-    - [least squares + ridge regression](https://ocw.mit.edu/courses/mathematics/18-086-mathematical-methods-for-engineers-ii-spring-2006/video-lectures/lecture-21-optimization-with-constraints/)
+
    
 Resources
 - [MIT online course taught by Prof. Gilbert Strang](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/)
