@@ -124,7 +124,7 @@ x = x - x.mean(axis=0)
 x -= x.mean(axis=0)
 ~~~
 
-Also, these numpy vectors/matrices have their OWN functions called methods, which you call with the `.` - this is different from matlab. So you can take the mean as
+Also, these numpy vectors/matrices have their OWN functions called **methods**, which you call with the `.` - this is different from matlab. So you can take the mean as
 ~~~
 xmean = x.mean(axis=0)
 xmean = np.mean(x, axis=0) # more matlab-y way
@@ -159,6 +159,8 @@ And for more info, this UCL Engineering [website](http://github-pages.ucl.ac.uk/
 - [plotting in jupyter](https://www.tutorialspoint.com/jupyter/jupyter_notebook_plotting.htm) (**ESSENTIAL**)
 - [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) 
 - numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) (**ESSENTIAL**)
+- [objects](https://www.programiz.com/python-programming/class) (**dots don't mean struct!**)
 - scikit-learn [tutorials](https://scikit-learn.org/stable/tutorial/basic/tutorial.html#machine-learning-the-problem-setting)
 - intro to python [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf)
+- pandas [tutorial](https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html#min)
 
