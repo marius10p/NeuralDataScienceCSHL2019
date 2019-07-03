@@ -42,6 +42,16 @@ git commit -a -m 'mytext added'
 git push
 ~~~
 
+You can also add all new files simultaneously, but make sure you are not adding unwanted files in subdirectories etc
+~~~
+git add -a
+git commit -a
+git push
+~~~
+
+If the repository was changed by another user, the "push" command will fail and prompt you to `git pull` first, then try `git push`. If your changes have conflicts with those of another user, the pull command will inform you of conflicts, and you will have to fix them manually, then commit again.
+
+
 ### Advanced (optional)
 
 This isn't our repository so we can't make a branch, add a feature and push it to the master branch. But we can **fork** the repository and make a branch there, and then if we want to suggest these changes to the master branch we make a **pull request**.
@@ -71,6 +81,7 @@ If this is your own repository then the following will merge the branch into the
 git checkout master
 git merge mybranch
 ~~~
+
 
 ### Extra python info
 
