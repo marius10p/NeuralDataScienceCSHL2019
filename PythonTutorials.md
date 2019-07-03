@@ -72,17 +72,17 @@ The tutorials below will use jupyter notebooks (and pretty much everyone who use
 
 If you're familiar with matlab, then here's a [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) cheatsheet. The numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) is also very good. 
 
-The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Array indexing starts at ZERO and you can use negative numbers to go backwards:
+The [indexing](https://docs.scipy.org/doc/numpy/user/quickstart.html#fancy-indexing-and-index-tricks) is a bit different so take note. Array indexing starts at ZERO and you can use negative numbers to go backwards. Run the following in a cell (CTRL+ENTER to run a cell):
 ~~~
 import numpy as np
 
-x = np.random.rand(50)
-x = x
-[0:-2]
-# x = x(1:end-2) in matlab
-
+x = np.arange(0,10)
+print(x)
+print(x[0:-2]) # same as x = x(1:end-2) in matlab
+print(x[:-2]) # omitting the 0 has the same effect
+print(x[:-2:2]) # take every second value
 ~~~
-Slices are these colon indices `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast. Run the following in a cell (CTRL+ENTER to run a cell):
+Slices are these colon indices `1:10` and these can broadcast in 2D arrays, but lists of indices do NOT broadcast. 
 ~~~
 import numpy as np
 import matplotlib.pyplot as plt
@@ -96,8 +96,8 @@ plt.imshow(x[10:20, 10:20])
 # list of indices (get *10* numbers not a 10x10)!
 print(x[np.arange(10,20,1,int), np.arange(10,20,1,int)])
 
-
-
+# if you want to broadcast with a list you can use ix_ but this is SLOW so slices are preferred
+plt.imshow(x[np.ix_( np.arange(10,20,1,int), np.arange(10,20,1,int) )])
 ~~~
 
 Numpy also automatically broadcasts if last N indices are the same (it will add the first index itself). However, if you want to broadcast along the last indices, then you need to add new axes:
@@ -131,7 +131,31 @@ You can see all the methods of an object with
 dir(x)
 ~~~
 
+Another thing to note in python is that equal (`=`) does not allocate new memory unless you tell it to. Try the following code:
+~~~
+import numpy as np
+
+a = np.arange(0,10,1,int)
+b = a
+print('original: b[3] = %d'%b[3])
+a[3] = 4
+print('after changing a: b[3] = %d'%b[3])
+~~~
+
+Changing `a` will change the value of `b`! Use `b = a.copy()` if you want to prevent this.
+
 The scikit-learn [tutorials](https://scikit-learn.org/stable/tutorial/basic/tutorial.html#machine-learning-the-problem-setting) are a nice place to start trying out some python for simple machine learning.
 
 And for more info, this UCL Engineering [website](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/) covers many python programming topics, here's a [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf) of their intro to python.
+
+### Summary of resources
+
+- Anaconda [download](https://www.anaconda.com/distribution/) **FIRST STEP**
+- conda [tutorial](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)
+- [conda vs pip](https://www.anaconda.com/understanding-conda-and-pip/)
+- [plotting in jupyter](https://www.tutorialspoint.com/jupyter/jupyter_notebook_plotting.htm) **ESSENTIAL**
+- [MATLAB TO NUMPY](http://mathesaurus.sourceforge.net/matlab-numpy.html) 
+- numpy [tutorial](https://docs.scipy.org/doc/numpy/user/quickstart.html) **ESSENTIAL**
+- scikit-learn [tutorials](https://scikit-learn.org/stable/tutorial/basic/tutorial.html#machine-learning-the-problem-setting)
+- intro to python [pdf](http://github-pages.ucl.ac.uk/rsd-engineeringcourse/notes.pdf)
 
