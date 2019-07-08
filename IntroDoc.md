@@ -42,8 +42,3 @@ Meals are served during the following hours and at these locations:
 - Lunch in Meier House or Conference Center: 11:30 AM - 1:30 PM
 - Dinner in Robertson House: 6:00 PM – 7:00 PM
 
-# Schedule:
-
-# Student Atendees:
-# Instructors and co-instructors:
-
