@@ -2,11 +2,11 @@ Date | Content | Morning | Afternoon | Evening | Comment
 --- | --- | --- | --- | --- | --- |
 7/12 | | |  Check in (Robertson). 6-7: Cocktails (Robertson)| 7-8: Dinner (Robertson)|Conference center after dinner, 9 Reception in basement of Robertson |
 7/13 | Introduction| Instructors: Course philosopy | Instructors: Coding 101 | Coding tutorials| 
-7/14 | E-phys: spike data | [Matt Smith](http://www.smithlab.net/): primate | [Nick Steinmetz](http://www.steinmetzlab.net/): mouse & Mark PCA| [Vijay Iyer](https://www.linkedin.com/in/mathworks-neuro-liaison): Statistical issues | Evening Lecture
-7/15 | Ephys: continuous data | [Mike X. Cohen](http://www.mikexcohen.com/): FT static | [Mike X. Cohen](http://www.mikexcohen.com/): Wavelets| Faculty research talks | Evening Lecture
-7/16 | Ephys: continous data & spike sorting | [Mike X. Cohen](http://www.mikexcohen.com/): multivariate | Mark: Dimensionality reduction  &  [Tatiana Engel](https://www.cshl.edu/research/faculty-staff/tatiana-engel/): decision-making | [Pascal](https://as.nyu.edu/content/nyu-as/as/faculty/pascal-wallisch.html) & [Nick Steinmetz](http://www.steinmetzlab.net/): Spike sorting old and new| Evening Lecture
+7/14 | E-phys: spike data | [Matt Smith](http://www.smithlab.net/): primate | [Nick Steinmetz](http://www.steinmetzlab.net/): mouse & Mark PCA| [Vijay Iyer](https://www.linkedin.com/in/mathworks-neuro-liaison): Statistical issues 
+7/15 | Ephys: continuous data | [Mike X. Cohen](http://www.mikexcohen.com/): FT static | [Mike X. Cohen](http://www.mikexcohen.com/): Wavelets| Faculty research talks 
+7/16 | Ephys: continous data & spike sorting | [Mike X. Cohen](http://www.mikexcohen.com/): multivariate | Mark: Dimensionality reduction  &  [Tatiana Engel](https://www.cshl.edu/research/faculty-staff/tatiana-engel/): decision-making | [Pascal](https://as.nyu.edu/content/nyu-as/as/faculty/pascal-wallisch.html) & [Nick Steinmetz](http://www.steinmetzlab.net/): Spike sorting old and new
 7/17 | Encoding | [Jonathan Pillow](https://pillowlab.princeton.edu/): lecture | [Jonathan Pillow](https://pillowlab.princeton.edu/): exercises | Debate |
-7/18 | Decoding | [Konrad Kording](http://kordinglab.com/): lecture | [Konrad Kording](http://kordinglab.com/): exercises | [Konrad Kording](http://kordinglab.com/): How to write a paper | Evening Lecture
+7/18 | Decoding | [Konrad Kording](http://kordinglab.com/): lecture | [Konrad Kording](http://kordinglab.com/): exercises | [Konrad Kording](http://kordinglab.com/): How to write a paper
 7/19 | Behavior: Deep Learning Applications | [Alexander Mathis](http://www.people.fas.harvard.edu/~amathis/): [DeepLapCut](http://www.mousemotorlab.org/deeplabcut) & Mark: OpenP| [Alexander Mathis](http://www.people.fas.harvard.edu/~amathis/): Tensorflow (Kaggle!) | Open 
 7/20 | Break Day
 7/21 | Imaging: Data tools,mesoscope, sensors| [Marius](https://www.janelia.org/lab/pachitariu-lab): Python/Git Intro + 2P data| [Marius](https://www.janelia.org/lab/pachitariu-lab) & [Karel Svoboda](https://www.janelia.org/lab/svoboda-lab): Mouse mesoscope |[Loren Looger](https://www.janelia.org/lab/looger-lab)
