@@ -1,6 +1,6 @@
 Date | Content | Morning | Afternoon | Evening | Comment
 --- | --- | --- | --- | --- | --- |
-7/12 | | |  Check in at Robertson. 6-7: Cocktails and reception (Robertson)| 7-8: Dinner (Robertson)|Conference center after dinner |
+7/12 | | |  Check in (Robertson). 6-7: Cocktails and reception (Robertson)| 7-8: Dinner (Robertson)|Conference center after dinner |
 7/13 | Introduction| Instructors: Course philosopy | Instructors: Coding 101 | Coding tutorials| 
 7/14 | E-phys: spike data | [Matt Smith](http://www.smithlab.net/): primate | [Nick Steinmetz](http://www.steinmetzlab.net/): mouse | [Vijay Iyer](https://www.linkedin.com/in/mathworks-neuro-liaison): Statistical issues | Evening Lecture
 7/15 | Ephys: continuous data | [Mike X. Cohen](http://www.mikexcohen.com/): EEG | [Mike X. Cohen](http://www.mikexcohen.com/): LFP | [Tatiana Engel](https://www.cshl.edu/research/faculty-staff/tatiana-engel/): decision-making | Evening Lecture
