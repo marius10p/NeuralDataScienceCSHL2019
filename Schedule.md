@@ -1,8 +1,8 @@
 Date | Content | Morning | Afternoon | Evening | Comment
 --- | --- | --- | --- | --- | --- |
 7/12 | | |  Check in (Robertson). 6-7: Cocktails (Robertson)| 7-8: Dinner (Robertson)|Conference center after dinner, 9 Reception in basement of Robertson |
-7/13 | Introduction| Instructors: Course philosopy | Instructors: Coding 101 | Coding tutorials| 
-7/14 | E-phys: spike data | [Matt Smith](http://www.smithlab.net/): primate | [Nick Steinmetz](http://www.steinmetzlab.net/): mouse & Mark PCA| [Vijay Iyer](https://www.linkedin.com/in/mathworks-neuro-liaison): MATLAB Demo 
+7/13 | Introduction| Instructors: Course philosopy | Instructors: Coding 101 | [Vijay Iyer](https://www.linkedin.com/in/mathworks-neuro-liaison): MATLAB Demo| 
+7/14 | E-phys: spike data | [Matt Smith](http://www.smithlab.net/): primate | [Nick Steinmetz](http://www.steinmetzlab.net/): mouse | Mark introduces PCA|  
 7/15 | Ephys: continuous data | [Mike X. Cohen](http://www.mikexcohen.com/): FT static | [Mike X. Cohen](http://www.mikexcohen.com/): Wavelets| Faculty research talks 
 7/16 | Ephys: continous data & spike sorting | [Mike X. Cohen](http://www.mikexcohen.com/): multivariate | Mark: Dimensionality reduction  &  [Tatiana Engel](https://www.cshl.edu/research/faculty-staff/tatiana-engel/): decision-making | [Pascal](https://as.nyu.edu/content/nyu-as/as/faculty/pascal-wallisch.html) & [Nick Steinmetz](http://www.steinmetzlab.net/): Spike sorting old and new
 7/17 | Encoding | [Jonathan Pillow](https://pillowlab.princeton.edu/): lecture | [Jonathan Pillow](https://pillowlab.princeton.edu/): exercises | Debate |
