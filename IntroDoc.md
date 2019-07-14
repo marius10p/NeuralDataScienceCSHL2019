@@ -6,13 +6,13 @@ We look forward to meeting you on the evening of July 12th, and to a productive 
 Here is a list of items to bring. Keep in mind the summer temperatures and humidity. 
 
 -	Any and all anticipated medications
--	Bug spray
 -	Sunscreen
 -	Hair dryer  
 -	Umbrella or rain poncho
 -	Flip flops or slides (for the shower)
 -	Toothpaste and toothbrush
 -	Conditioner
+- Lots of bug spray
 -	Sweater or sweatshirt (even if you are attending a summer course or workshop)
 -	Bathing suit
 -	Recreational gear
