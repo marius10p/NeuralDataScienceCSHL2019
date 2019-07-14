@@ -1,4 +1,5 @@
 readNPY.m 
+readNPYheader.m
 	Reads .npy files into Matlab
 	From: https://github.com/kwikteam/npy-matlab
 
