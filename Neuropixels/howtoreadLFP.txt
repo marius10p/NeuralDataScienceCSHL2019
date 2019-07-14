@@ -1,0 +1,22 @@
+From Nick Steinmetz:
+
+Each LFP file has 385 channels of int16 data at 2500Hz. They can be loaded directly into software like Neuroscope, and can be read in matlab like:
+
+>> fid = fopen('thisfile.bin', 'r');
+>> dat = fread(fid, [385 Inf], '*int16');
+>> fclose(fid);
+
+Note that the file may well be too large to fit into memory so you may not want to read "Inf" samples as in this example.
+
+Each file has different start and end times, and there are drifts in the clocks between probes - so the timestamp files, which give the aligned timing information, must be used. The aligned timestamps are specified in a particular way: an Nx2 matrix where the first column is sample numbers and the second column is the time in seconds at which those samples occurred. Since LFP was sampled regularly, N=2, just the first and last sample. So, to get the time at which every sample occurred, use this line in matlab:
+
+>> tsData = readNPY('...lf.timestamps.npy');
+>> allTS = interp1(tsData(:,1), tsData(:,2), tsData(1,1):tsData(2,1));
+
+That's just linearly interpolating between the times given for the first and last samples.
+
+An important note about data quality: The referencing was not functioning properly for several probes. The AP (i.e. high-pass filtered) data was essentially perfectly recovered using common average referencing, but this has not been assessed for the LFP data. So, please check the data quality carefully for whatever you plan to analyze, and if it looks noisy with matched noise across channels, try CAR to fix it.
+
+
+additional example
+https://github.com/cortex-lab/neuropixels/wiki/Other_analysis_methods#basic-lfp-characterization
