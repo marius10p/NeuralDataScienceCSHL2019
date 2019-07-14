@@ -129,7 +129,6 @@ for tr = 1:trials.N
 end
 clear tr
 
-
 %% Exercise: compute average firing rate for each neuron-trial
 % add a field to neurons structure giving rate 
 
@@ -168,7 +167,6 @@ end
 clear rsum
 xlabel('firing rate')
 ylabel('depth')
-axis ij
 box on
 legend(regions.name)
 
@@ -199,7 +197,6 @@ for p = 0:1 % separate subplot for each probe
         plot(spikes(reg==r&prob==p),depths(reg==r&prob==p),'.','color',regions.color(r,:))
     end
     clear r
-    axis ij
     box on
     grid on
     title(['probe ',num2str(p)])
