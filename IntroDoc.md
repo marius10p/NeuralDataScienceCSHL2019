@@ -5,14 +5,14 @@ We look forward to meeting you on the evening of July 12th, and to a productive 
 # What to Pack:
 Here is a list of items to bring. Keep in mind the summer temperatures and humidity. 
 
--	Any and all anticipated medications
--	Bug spray
+-	All anticipated medications
 -	Sunscreen
 -	Hair dryer  
 -	Umbrella or rain poncho
 -	Flip flops or slides (for the shower)
 -	Toothpaste and toothbrush
 -	Conditioner
+- Lots of bug spray
 -	Sweater or sweatshirt (even if you are attending a summer course or workshop)
 -	Bathing suit
 -	Recreational gear
@@ -41,9 +41,4 @@ Meals are served during the following hours and at these locations:
 - Breakfast in Robertson House: 7:30 AM - 9:00 AM
 - Lunch in Meier House or Conference Center: 11:30 AM - 1:30 PM
 - Dinner in Robertson House: 6:00 PM – 7:00 PM
-
-# Schedule:
-
-# Student Atendees:
-# Instructors and co-instructors:
 
