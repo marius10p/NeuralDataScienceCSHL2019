@@ -8,7 +8,7 @@ Open the file [Python/python_tutorial.ipynb](../Python/python_tutorial.ipynb) in
 
 ## MESOSCOPE IN V1
 
-![2pv1](2pv1.jpg)
+![2pv1](2pv1.JPG)
 
 ### view the data in [suite2p](https://github.com/MouseLand/suite2p)
 
@@ -36,7 +36,7 @@ I've run facemap on the whole movie and aligned them to the neural frames for yo
 
 Let's learn how to process 2P clacium imaging. There are four main steps:
 
-![2psteps](suite2p.jpg)
+![2psteps](suite2p.JPG)
 
 1. Motion correction [notebook], [slides](../LectureSlides/Day5)
 2. Cell detection [notebook], [slides]
