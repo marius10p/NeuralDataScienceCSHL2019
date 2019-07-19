@@ -8,6 +8,8 @@ Open the file [Python/python_tutorial.ipynb](../Python/python_tutorial.ipynb) in
 
 ## MESOSCOPE IN V1
 
+![2pv1](2pv1.jpg)
+
 ### view the data in [suite2p](https://github.com/MouseLand/suite2p)
 
 Install suite2p and load the data in folder XX into suite2p (stat.npy).
@@ -31,3 +33,12 @@ Let's look at what the mouse is doing during the recording. Install facemap usin
 I've run facemap on the whole movie and aligned them to the neural frames for you. So now let's see how the behavior relates to the neural activity. Open the [behavioral_analysis notebook](behavioral_analysis.ipynb).
 
 ## SUITE2P
+
+Let's learn how to process 2P clacium imaging. There are four main steps:
+
+![2psteps](suite2p.jpg)
+
+1. Motion correction [notebook], [slides](../LectureSlides/Day5)
+2. Cell detection [notebook], [slides]
+3. Spike deconvolution [notebook], [slides]
+4. Manual curation (inspect data in GUI)
