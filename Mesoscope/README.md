@@ -36,9 +36,9 @@ I've run facemap on the whole movie and aligned them to the neural frames for yo
 
 Let's learn how to process 2P clacium imaging. There are four main steps:
 
-![2psteps](suite2p.JPG)
-
 1. Motion correction [notebook], [slides](../LectureSlides/Day5)
 2. Cell detection [notebook], [slides]
 3. Spike deconvolution [notebook], [slides]
 4. Manual curation (inspect data in GUI)
+
+![2psteps](suite2p.JPG)
