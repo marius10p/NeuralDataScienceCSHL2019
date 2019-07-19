@@ -8,7 +8,9 @@ Open the file [Python/python_tutorial.ipynb](../Python/python_tutorial.ipynb) in
 
 ## MESOSCOPE IN V1
 
-![2pv1](2pv1.jpg)
+![2pv1](2pv1.JPG)
+
+^ 18,795 neurons in V1 ^
 
 ### view the data in [suite2p](https://github.com/MouseLand/suite2p)
 
@@ -36,9 +38,9 @@ I've run facemap on the whole movie and aligned them to the neural frames for yo
 
 Let's learn how to process 2P clacium imaging. There are four main steps:
 
-![2psteps](suite2p.jpg)
-
 1. Motion correction [notebook], [slides](../LectureSlides/Day5)
 2. Cell detection [notebook], [slides]
 3. Spike deconvolution [notebook], [slides]
 4. Manual curation (inspect data in GUI)
+
+![2psteps](suite2p.JPG)
