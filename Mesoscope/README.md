@@ -8,7 +8,8 @@ Open the file [Python/python_tutorial.ipynb](../Python/python_tutorial.ipynb) in
 
 ## MESOSCOPE IN V1
 
-![2pv1](2pv1.JPG "18,795 neurons in V1")
+![2pv1](2pv1.JPG)
+^ 18,795 neurons in V1 ^
 
 ### view the data in [suite2p](https://github.com/MouseLand/suite2p)
 
