@@ -20,7 +20,7 @@ Open the file [Python/python_tutorial.ipynb](../Python/python_tutorial.ipynb) in
 
 ## MESOSCOPE IN V1
 
-![2pv1](2pv1.JPG)
+![2pv1](figs/2pv1.JPG)
 
 ^ 18,795 neurons in V1 ^
 
@@ -55,4 +55,4 @@ Let's learn how to process 2P clacium imaging. There are four main steps:
 3. Spike deconvolution [notebook], [slides]
 4. Manual curation (inspect data in GUI)
 
-![2psteps](suite2p.JPG)
+![2psteps](figs/suite2p.JPG)
