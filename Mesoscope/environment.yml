@@ -15,6 +15,7 @@ dependencies:
   - h5py
   - scikit-image
   - scikit-learn
+  - jupyter
   - pip:
     - PyQt5
     - pyqtgraph
