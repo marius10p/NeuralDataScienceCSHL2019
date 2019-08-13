@@ -16,7 +16,9 @@
 faceDimension = interp1(S.face.timestamps(:,2),S.face.motionEnergy,bins.centers);
 
 figure
-plot(bins.centers,faceDimension)
+plot(bins.centers,zscore(faceDimension),bins.centers,zscore(sum(F.smoothed,2)))
+xlim([500 560])
+legend('face motion energy','total neuron activity')
 
 %% Demo: sort neurons by region and combine face and neuron data for side-by-side comparison
 % sort neurons by region
@@ -75,7 +77,7 @@ hold(ax1,'off')
 % it looks like face motion energy is a fairly decent predictor of the
 % total activity
 
-clear ax1 ax2 t1 t2 f1 h1 h2 interval I R 
+clear ax1 ax2 t1 t2 f1 h1 h2 interval I R t
 
 %% Regress neural activity onto face motion energy
 % use zscore(face) as regressor
@@ -90,9 +92,13 @@ clear ax1 ax2 t1 t2 f1 h1 h2 interval I R
 % Exercise: compute regression coefficients 
 P = zscore(faceDimension);
 
+% Cross-validation (2-fold cross validation for simplicity, 10-fold is standard)
+cvp = cvpartition(bins.N,'kfold',2);
+
 % matlab does least squares automatically when division is called with
 % matrices of different dimensions
-R = P\F.smoothed;
+% use the training partition for learning R
+R = P(cvp.training(1))\F.smoothed(cvp.training(1),:);
 
 % remove motion-energy dimension from data
 F.noface = F.smoothed - P*R;
@@ -102,11 +108,13 @@ F.faceCoef = R;
 
 clear P R
 %% compute explained variance 
-varI = var(F.smoothed,1,1);
-varF = var(F.noface,1,1);
+% use the testing partition for validation
+
+varI = var(F.smoothed(cvp.test(1),:),1,1);
+varF = var(F.noface(cvp.test(1),:),1,1);
 FVE = 1-varF./varI;
 
-%% plot results
+% plot results
 figure
 hold on
 [R,I] = sort(neurons.region,'ascend');
@@ -118,7 +126,7 @@ for r=1:regions.N
 end
 clear r x y R I
 ylabel('FVE')
-title('Variance Explained by face motion energy')
+title({'Variance Explained by face motion energy','2-fold cross validation'})
 legend(regions.name)
 
 clear varI varF FVE
@@ -144,7 +152,9 @@ lag2 = 80; % 400 ms after stim
 
 c = cat(1,v((1-lag1):end),zeros(-lag1,1));
 r = cat(2,v(1-lag1),zeros(1,lag2-lag1-1));
-Pstim = toeplitz(c,r);
+Pstim = toeplitz(c,r); % the stimulus predictor array [T x 90] = 90 predictors, 
+                       % the 90 regression coefficients of a given neuron, we will call the Stimulus Kernel
+byStim = logical(sum(Pstim,2)); % a logical array of all bins implicated in the stim predictor
 Pstim = Pstim - mean(Pstim,1); % predictors should have zero mean
 clear c r v lag1 lag2
 % Rstim is now a vector of 90 predictors that define the kernel
@@ -182,6 +192,10 @@ W = Wt';
 
 clear Wt lam R2 V
 
+% Plot the first 10 basis functions for the kernels
+figure
+stackedplot(linspace(-10,80,90),B(:,1:10),'k','linewidth',2)
+
 %% look at kernel approximations for individual neurons
 n = randperm(neurons.N,1); % pick a random neuron
 f = F.smoothed(:,n);
@@ -193,7 +207,7 @@ subplot(3,1,1)
 bar(k_lsq, 'BarWidth', 1)
 title('least squares')
 
-lam_tik = 1e2;
+lam_tik = 3e2;
 k_tik =  (Pstim'*Pstim +lam_tik*(Gtik'*Gtik))\Pstim'*f;
 subplot(3,1,2)
 bar(k_tik, 'BarWidth', 1)
@@ -210,15 +224,27 @@ sgtitle(['Neuron ',num2str(n),': Estimated stimulus kernel'])
 clear n f k_lsq lam_tik k_tik rank w k_rrr
 
 %% Run on all neurons and compute FVE
-%   each neuron gets it's own optimized stimulus kernel
-lam_tik = 1e2;
-KstimTik = (Pstim'*Pstim +lam_tik*(Gtik'*Gtik))\Pstim'*F.smoothed;
-rank = 4;
-KstimRRR = B(:,1:rank)*(Pstim*B(:,1:rank)\F.smoothed);
+%   each neuron gets it's own optimized reduced rank stimulus kernel
+% compare Tikhonov regularization to Reduced Rank Regression
+KstimLSQ = Pstim\F.smoothed;
 
-varI = var(F.smoothed,1,1);
-varF = var(F.smoothed - Pstim*KstimRRR,1,1);
-FVE = 1 - varF./varI;
+lam_tik = 1e3;
+KstimTik = (Pstim'*Pstim +lam_tik*(Gtik'*Gtik))\Pstim'*F.smoothed;
+
+rank = 4;
+KstimRRR = B(:,1:rank)*((Pstim*B(:,1:rank))\F.smoothed);
+
+f = F.smoothed;
+varI = var(f(byStim,:),1,1);
+f = F.smoothed - Pstim*KstimLSQ;
+varF_LSQ = var(f(byStim,:),1,1);
+FVE_LSQ = 1 - varF_LSQ./varI;
+f = F.smoothed - Pstim*KstimRRR;
+varF_RRR = var(f(byStim,:),1,1);
+FVE_RRR = 1 - varF_RRR./varI;
+f = F.smoothed - Pstim*KstimTik;
+varF_Tik = var(f(byStim,:),1,1);
+FVE_Tik = 1 - varF_Tik./varI;
 
 % plot results
 figure
@@ -226,18 +252,44 @@ hold on
 [R,I] = sort(neurons.region,'ascend');
 for r=1:regions.N
     x = find(R == r);
-    y = FVE(1,I);   
+    y = FVE_LSQ(1,I);   
     y = y(1,R == r);
+    subplot(3,1,1)
+    hold on
     bar(x,y,'BarWidth',1,'facecolor',regions.color(r,:),'edgecolor',regions.color(r,:))
+    title('Least Squares')
+    y = FVE_Tik(1,I);   
+    y = y(1,R == r);
+    subplot(3,1,2)
+    hold on
+    bar(x,y,'BarWidth',1,'facecolor',regions.color(r,:),'edgecolor',regions.color(r,:))
+    title('Tikhonov')
+    y = FVE_RRR(1,I);   
+    y = y(1,R == r);
+    subplot(3,1,3)
+    hold on
+    bar(x,y,'BarWidth',1,'facecolor',regions.color(r,:),'edgecolor',regions.color(r,:))
+    title(['Rank ',num2str(rank),' RRR'])
 end
 clear r x y R I
 hold off
 ylabel('FVE')
-title('Variance Explained by Stimulus Kernel Regression')
-legend(regions.name)
-
+sgtitle('Variance Explained by Stimulus Kernel Regression')
+% subplot(3,1,1)
+% legend(regions.name,'location','bestoutside')
+% subplot(3,1,2)
+% legend(regions.name,'location','bestoutside')
+% subplot(3,1,3)
+% legend(regions.name,'location','bestoutside')
 clear varI varF FVE lam_tik rank
 
+
+%% 
+
+
+
+figure
+plot(temp)
 %% Clear all regression vars
 % clear B f  faceDimension Gtik Kstim KstimRRR KstimTik Pstim  W
 

@@ -6,7 +6,7 @@
 % use Wilcoxon rank sum test to determine which neurons have a
 % statistically significantly higher firing rate on trials with stimulus and movement
 
-alpha = .01; % threshold p-valye for null hypothesis
+alpha = .000001; % threshold p-value for null hypothesis
 
 for n = 1:neurons.N
     x = neurons.rate(trials.isStim & trials.isMovement,n);
@@ -77,7 +77,6 @@ title('PSTH summed over all neurons and trials')
 xlabel('time [s] relative to stimulus')
 ylabel('Total activity')
 ylim([0 Inf])
-legend('binned','smoothed','location','northwest')
 clear y1 y2 t
 
 %% Plot PSTH for each region

@@ -21,11 +21,10 @@ mainPath = 'C:\Users\micha\Documents\Data\taskData2';
 % specify session by name
 sesName = 'Moniz_2017-05-15';
 
-% add path to npy-matlab-master (tool to read python files into matlab)
-addpath(genpath('C:\Users\micha\Documents\mmCode\npy-matlab-master'))
+% add path to third-party functions
+addpath(genpath('C:\Users\micha\Documents\mmCode\Neuropixels\Utilities'))
 % add path to custom functions
-addpath(genpath('C:\Users\micha\Documents\mmCode\myFunctions'))
-
+addpath(genpath('C:\Users\micha\Documents\mmCode\Neuropixels\myFunctions'))
 
 % construct path to session file
 sesPath = [mainPath filesep sesName];
@@ -106,11 +105,11 @@ neurons.probe = S.clusters.probes;
 
 %% Create a trials struct
 
-trials = struct;
+trials = S.trials;
 trials.N = size(S.trials.intervals,1);
 trials.tstim = S.trials.visualStim_times;
 % indicate if non-zero stimulus was presented at stim time
-trials.isStim = logical(trials.tstim.*S.trials.visualStim_contrastLeft.*S.trials.visualStim_contrastRight);
+trials.isStim = logical(S.trials.visualStim_contrastLeft) | logical(S.trials.visualStim_contrastRight);
 % did the mouse move the wheel in response
 trials.isMovement = S.trials.response_choice ~= 0;
 % for each trial, find the movement onset time
@@ -128,6 +127,7 @@ for tr = 1:trials.N
    clear m t cond1 cond2 cond3
 end
 clear tr
+
 
 %% Exercise: compute average firing rate for each neuron-trial
 % add a field to neurons structure giving rate 
@@ -193,7 +193,11 @@ figure
 for p = 0:1 % separate subplot for each probe
     subplot(2,1,p+1)
     hold on
+    rlist = [];
     for r = 1:regions.N % plot all spikes in a given region against depth
+        if sum(reg==r&prob==p)
+            rlist = cat(1,rlist,r);
+        end
         plot(spikes(reg==r&prob==p),depths(reg==r&prob==p),'.','color',regions.color(r,:))
     end
     clear r
@@ -201,7 +205,7 @@ for p = 0:1 % separate subplot for each probe
     grid on
     title(['probe ',num2str(p)])
     ylabel('depth \mum')
-    legend(regions.name)
+    legend(regions.name(rlist,:))
 end
 clear p
 xlabel('time [s]')
@@ -233,7 +237,7 @@ F.numBins = bins.N;
 F.numNeurons = neurons.N;
 F.binned = zeros(F.numBins,F.numNeurons); % requires 1.5 Gb
 
-%% Exercise: write a loop to bin the data:
+% Exercise: write a loop to bin the data:
 % hint: use histcounts()
 for n = 1:neurons.N
     isNeuron = S.spikes.clusters==neurons.id(n);  
@@ -251,14 +255,14 @@ smooth.tmesh = (0:bins.width:3*smooth.sigma)';
 smooth.kernel = (smooth.tmesh >=0).*exp(-smooth.tmesh.^2/(2*smooth.sigma^2));
 smooth.kernel = smooth.kernel/sum(smooth.kernel);
 
-%% Exercise: Plot the smoothing kernel
+% Exercise: Plot the smoothing kernel
 figure
 stem(smooth.tmesh,smooth.kernel)
 title('weights for causal Gaussian Smoothing')
 xlabel('time [s]')
 drawnow
 
-%% Smooth the data using convolution with smoothing kernel
+% Smooth the data using convolution with smoothing kernel
 F.smoothed = convn(smooth.kernel,F.binned); 
 F.smoothed = F.smoothed(1:F.numBins,:,:); 
 % renormalize the kernel for cases where data was unavailable (first frames)
