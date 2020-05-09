@@ -24,6 +24,8 @@ Open the file [Python/python_tutorial.ipynb](../Python/python_tutorial.ipynb) in
 
 ^ 18,795 neurons in V1 ^
 
+### download the data: https://figshare.com/articles/Recording_of_19_000_neurons_across_mouse_visual_cortex_during_sparse_noise_stimuli/9505250
+
 ### view the data in [suite2p](https://github.com/MouseLand/suite2p)
 
 Install suite2p and load the data in folder XX into suite2p (stat.npy).
